@@ -9,9 +9,9 @@
 
 
 
-/**
- * Возвращает результат конкатенации двух строк
- *
+
+ /** Возвращает результат конкатенации двух строк
+ 
  * @param {string} value1
  * @param {string} value2
  * @return {string}
@@ -22,7 +22,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-    throw new Error('Not implemented');
+	return value1 + value2;
 }
 
 
