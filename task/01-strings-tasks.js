@@ -261,7 +261,12 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+    let bool = false;
+
+    if ( (/\w+/.test(value)) && (value != undefined) ) 
+	bool = true;
+
+    return bool;
 }
 
 
