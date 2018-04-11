@@ -38,8 +38,8 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-	let n = value.length;
-	return n;
+	//let n = value.length;
+	return value.length;
 }
 
 /**
