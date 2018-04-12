@@ -295,7 +295,13 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+	let masty = '♣♦♥♠';
+	let nominals = 'A2345678910JQK';
+	let mast = masty.indexOf(value[value.length - 1]);
+	let nominal = nominals.indexOf(value[0]);
+	if ( value[0] == 'J' || value[0] == 'Q' || value[0] == 'K')
+		nominal -= 1;
+	return 13*mast+nominal;
 }
 
 
