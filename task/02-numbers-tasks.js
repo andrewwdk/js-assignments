@@ -160,7 +160,10 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a, b, c) {
-    throw new Error('Not implemented');
+   //let bottom_diag = Math.sqrt(a*a + b*b);
+   //let diag = Math.sqrt(c*c + bottom_diag*bottom_diag);
+   return Math.sqrt(a*a + b*b + c*c);
+    //return Math.sqrt(c*c + Math.sqrt(a*a + b*b)*Math.sqrt(a*a + b*b));
 }
 
 /**
