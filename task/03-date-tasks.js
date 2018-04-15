@@ -115,8 +115,7 @@ function angleBetweenClockHands(date) {
 	angle-=360;
 	angle = Math.abs(angle);
 }
-//return hours;
-	return angle*Math.PI/180; //+1.5707963267948966
+	return angle*Math.PI/180; 
 }
 
 
