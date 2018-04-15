@@ -106,7 +106,17 @@ return date.toISOString().slice(11, 23);
  *    Date.UTC(2016,3,5,21, 0) => Math.PI/2
  */
 function angleBetweenClockHands(date) {
-    throw new Error('Not implemented');
+    let minutes = date.getMinutes();
+    let hours = date.getHours()-3;
+	if (hours < 0)
+		hours += 24;
+    let angle = 0.5*(60*hours + minutes) - 6*minutes;
+    while ( angle > 180){
+	angle-=360;
+	angle = Math.abs(angle);
+}
+//return hours;
+	return angle*Math.PI/180; //+1.5707963267948966
 }
 
 
