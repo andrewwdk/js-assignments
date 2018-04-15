@@ -84,7 +84,11 @@ return false;
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
 function timeSpanToString(startDate, endDate) {
-    throw new Error('Not implemented');
+var date = new Date("Sun, 17 May 1998 00:00:00 GMT+00");
+date.setMilliseconds(endDate.getTime() - startDate.getTime());
+
+return date.toISOString().slice(11, 23);
+    //return date.toISOString().slice(14, 26);
 }
 
 
