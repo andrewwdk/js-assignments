@@ -60,7 +60,11 @@ return  date;
  *    Date(2015,1,1)    => false
  */
 function isLeapYear(date) {
-    throw new Error('Not implemented');
+    let year = date.getFullYear();
+    if ( (Number.isInteger(year/4) && !Number.isInteger(year/100)) || (Number.isInteger(year/4) && Number.isInteger(year/100) && Number.isInteger(year/400))){
+	return true;
+} else
+return false;
 }
 
 
