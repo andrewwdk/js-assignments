@@ -107,9 +107,9 @@ return date.toISOString().slice(11, 23);
  */
 function angleBetweenClockHands(date) {
     let minutes = date.getMinutes();
-    let hours = date.getHours()-3;
-	if (hours < 0)
-		hours += 24;
+    let hours = date.getHours();
+	//if (hours < 0)
+	//	hours += 24;
     let angle = 0.5*(60*hours + minutes) - 6*minutes;
     while ( angle > 180){
 	angle-=360;
