@@ -377,7 +377,8 @@ if (arr.length > 0){
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-   throw new Error('Not implemented');
+   var new_arr = arr.filter(value => !value);
+	return new_arr.length;
 }
 
 /**
