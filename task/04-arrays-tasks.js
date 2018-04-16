@@ -359,7 +359,9 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-   throw new Error('Not implemented');
+if (arr.length > 0){
+   return arr.reduce((accumulator, cur_val) => accumulator + cur_val);
+} else return 0;
 }
 
 /**
