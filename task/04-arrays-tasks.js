@@ -105,7 +105,7 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-   return arr.filter(value => value);
+  return arr.filter( value => value);
 }
 
 /**
@@ -256,7 +256,12 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-   throw new Error('Not implemented');
+    return arr.filter(function(value, index){
+	if(index % 2 == 1)
+		if (value === null){
+			return 'null';
+		} else return value;
+});
 }
 
 
