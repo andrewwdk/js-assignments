@@ -94,7 +94,7 @@ function getRegexForIPv4() {
  * @return {RegExp}
  */
 function getRegexForSSN() {
-   throw new Error('Not implemented');
+   return  /\b(00[1-9]{1}|0[1-9]{1}[0-9]{1}|[1-9]{1}[0-9]{2})\b-\b(0[1-9]{1}|[1-9]{1}[0-9]{1})\b-\b(000[1-9]{1}|00[1-9]{1}[0-9]{1}|0[1-9]{1}[0-9]{2}|[1-9]{1}[0-9]{3})\b/;
 }
 
 
