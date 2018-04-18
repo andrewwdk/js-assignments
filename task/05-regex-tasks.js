@@ -31,7 +31,9 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-   throw new Error('Not implemented');
+    // var expr = new RegExp("[0-9, a-f]{8}-{1}([0-9, a-f]{4}-{1}){3}[0-9, a-f]{12}", "i");
+ // return expr;
+   return /{[0-9, a-f]{8}-{1}([0-9, a-f]{4}-{1}){3}[0-9, a-f]{12}}/i;
 }
 
 
