@@ -226,7 +226,27 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    var skobka1;
+	var skobka2;
+	var num1;
+	var num2;
+	if (isStartIncluded)
+	{
+		skobka1='[';
+	} else skobka1='(';
+	if (isEndIncluded)
+	{
+		skobka2=']';
+	} else skobka2=')';
+	if ( a > b)
+	{
+		num1 = b;
+		num2 = a;
+	} else {
+			 num1 = a;
+			 num2 = b;
+			}
+	return `${skobka1}${num1}, ${num2}${skobka2}`;
 }
 
 
