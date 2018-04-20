@@ -263,7 +263,14 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+	var i = str.length-1;
+    var final_str = '';
+	while (i >= 0)
+	{
+		final_str += str[i];
+		i--;
+	}
+	return final_str;
 }
 
 
@@ -280,7 +287,8 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    var str = num.toString();
+	return reverseString(str);
 }
 
 
@@ -305,12 +313,25 @@ function reverseInteger(num) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
-    throw new Error('Not implemented');
+    var str = reverseInteger(ccn);
+    var sum = 0;
+	for (var i = 0; i < str.length; i++)
+	{
+		var digit = parseInt(str[i]);
+		if (i % 2 == 1) digit*=2;
+		if (digit > 9) digit-=9;
+		sum+=digit;
+	}
+	if (sum % 10 == 0)
+	{
+		return true;
+	} else return false;
+
 }
 
 
 /**
- * Возвращает сумму всех цифр переданного чила след. образом:
+ * Возвращает сумму всех цифр переданного чиcла след. образом:
  *   step1 : найти сумму всех цифр исходного числа
  *   step2 : если сумма на step1 больше 9 нужно проделать step1 с полученной суммой
  *
