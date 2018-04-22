@@ -400,6 +400,7 @@ function isBracketsBalanced(str) {
 }
 
 
+
 /**
  * Возвращает строку, составленной на основе периода от переданного начала и конца периода
  * Конечная строка должна удовлетворять следующим правилам:
@@ -432,7 +433,73 @@ function isBracketsBalanced(str) {
  *
  */
 function timespanToHumanString(startDate, endDate) {
-    throw new Error('Not implemented');
+    var dif = (endDate.getTime() - startDate.getTime()) / 1000; /*seconds */
+	if (dif <= 45)
+	{
+		
+		return "a few seconds ago";
+	} else if (dif <= 90)
+			{
+				return "a minute ago";
+			} else 
+				{
+					dif/=60;  /*minutes*/
+					if (dif <= 45)
+					{
+						if (dif - parseInt(dif) < 0.50001)
+						{
+							 dif = parseInt(dif);
+						} else dif = parseInt(dif)+1;
+						return `${dif} minutes ago`;
+					}
+					if (dif <= 90)
+					{
+						return "an hour ago";
+					} else
+						{
+							dif/=60; /*hours*/
+							if (dif <= 22)
+							{
+								if (dif - parseInt(dif) <= 0.5)
+								{
+									 dif = parseInt(dif);
+								} else dif = parseInt(dif)+1;
+								return `${dif} hours ago`;
+							}
+							if (dif <= 36)
+							{
+								return "a day ago";
+							}  else
+								{
+									dif/=24; /*days*/
+									if (dif <= 25)
+									{
+										if (dif - parseInt(dif) <= 0.5)
+										{
+											 dif = parseInt(dif);
+										} else dif = parseInt(dif)+1;
+										return `${dif} days ago`;
+									}
+									if (dif <= 45)
+									{
+										return "a month ago";
+									}
+									if (dif <= 345)
+									{
+										dif = Math.round(dif/30); /*months*/
+										return `${dif} months ago`;
+									}
+									if (dif <= 545)
+									{
+										return "a year ago";
+									} else 
+										{
+											dif = Math.round(dif/360);/*years*/
+											return `${dif} years ago`;
+										}
+								} 
+						}
+				}
 }
 
 /**
