@@ -17,8 +17,36 @@
  *  ]
  */
 function createCompassPoints() {
-    throw new Error('Not implemented');
     var sides = ['N','E','S','W'];  // use array of cardinal directions only!
+    let points = []
+
+    let curr_azimuth = 0;
+    let getCompassPoint = (abbreviation, azimuth) => {
+        const point = {
+            abbreviation: abbreviation,
+            azimuth: azimuth
+        };
+        curr_azimuth += 11.25;
+
+        return point;
+    }
+
+    for (let i = 0; i < sides.length; i++) {
+        const side = sides[i];
+        const next = (i == sides.length - 1) ? sides[0] : sides[i + 1];
+        const isEven = !(i % 2);
+
+        points.push(getCompassPoint(`${side}`, curr_azimuth));
+        points.push(getCompassPoint(`${side}b${next}`, curr_azimuth));
+        points.push(getCompassPoint(isEven ? `${side}${side}${next}` : `${side}${next}${side}`, curr_azimuth));
+        points.push(getCompassPoint(isEven ? `${side}${next}b${side}` : `${next}${side}b${side}`, curr_azimuth));
+        points.push(getCompassPoint(isEven ? `${side}${next}` : `${next}${side}`, curr_azimuth));
+        points.push(getCompassPoint(isEven ? `${side}${next}b${next}` : `${next}${side}b${next}`, curr_azimuth));
+        points.push(getCompassPoint(isEven ? `${next}${side}${next}` : `${next}${next}${side}`, curr_azimuth));
+        points.push(getCompassPoint(`${next}b${side}`, curr_azimuth));
+    }
+
+    return points;
 }
 
 
