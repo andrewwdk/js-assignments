@@ -66,7 +66,9 @@ function getPowerFunction(exponent) {
  *   getPolynom()      => null
  */
 function getPolynom() {
-    throw new Error('Not implemented');
+    let coefs = Array.from(arguments);
+    let n =  coefs.length - 1;
+    return x => coefs.reduce((p, c, i) => p + Math.pow(x, n - i) * c, 0);
 }
 
 
@@ -85,7 +87,8 @@ function getPolynom() {
  *   memoizer() => тоже рандомное число  (при всех последующих вызовах возвращается тоже закешированный результат)
  */
 function memoize(func) {
-    throw new Error('Not implemented');
+    let ans = func();
+    return () => ans;
 }
 
 
